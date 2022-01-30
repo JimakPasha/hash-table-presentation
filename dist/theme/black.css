@@ -13,13 +13,13 @@ section.has-light-background, section.has-light-background h1, section.has-light
  *********************************************/
 :root {
   --r-background-color: #191919;
-  --r-main-font: Source Sans Pro, Helvetica, sans-serif;
-  --r-main-font-size: 42px;
-  --r-main-color: #fff;
+  --r-main-font: cursive;
+  --r-main-font-size: 40px;
+  --r-main-color: #000;
   --r-block-margin: 20px;
   --r-heading-margin: 0 0 20px 0;
-  --r-heading-font: Source Sans Pro, Helvetica, sans-serif;
-  --r-heading-color: #fff;
+  --r-heading-font: cursive;
+  --r-heading-color: #000;
   --r-heading-line-height: 1.2;
   --r-heading-letter-spacing: normal;
   --r-heading-text-transform: uppercase;
@@ -31,7 +31,7 @@ section.has-light-background, section.has-light-background h1, section.has-light
   --r-heading3-size: 1.3em;
   --r-heading4-size: 1em;
   --r-code-font: monospace;
-  --r-link-color: #42affa;
+  --r-link-color: #0c97f3;
   --r-link-color-dark: #068de9;
   --r-link-color-hover: #8dcffc;
   --r-selection-background-color: #bee4fd;
@@ -39,7 +39,10 @@ section.has-light-background, section.has-light-background h1, section.has-light
 }
 
 .reveal-viewport {
-  background: #191919;
+  background-image: url(../../assets/bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
   background-color: var(--r-background-color);
 }
 
@@ -354,4 +357,12 @@ section.has-light-background, section.has-light-background h1, section.has-light
   .backgrounds {
     background-color: var(--r-background-color);
   }
+}
+
+/*********************************************
+ * CUSTOM STYLES
+ *********************************************/
+
+.accent {
+  color: #ff0000;
 }

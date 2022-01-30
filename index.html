@@ -16,8 +16,265 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+
+				<section>
+          <h1 class="text">Хеш-таблица</h1>
+        </section>
+
+				<section id="fragments" data-background-image="./assets/bg2.jpg">
+          <h5>Что же это такое хеш-таблица?</h5>
+          <p class="fragment">
+            Хеш-таблица это структура данных, реализующая интерфейс ассоциативного массива.
+            Представляет собой эффективную структуру данных для реализации словарей, а именно, она позволяет хранить пары (ключ, значение) и выполнять три операции: добавления новой пары, поиска и операцию удаления пары по ключу.
+          </p>
+        </section>
+
+        <section>
+          <section id="fragments" data-background-image="./assets/bg2.jpg">
+            <h5>Рассмотрим преимущества и недостатки простейших структур данных</h5>
+            <ul class="fragment">
+              <li>Массивы</li>
+              <li>Связные списки</li>
+            </ul> 
+          </section>
+          <section data-auto-animate id="fragments" data-background-image="./assets/bg2.jpg">
+            <h5 data-id="code-title">Массивы</h5>
+            <pre data-id="code-animation">
+              <code class="hljs" data-trim data-line-numbers>
+                const array = ['apple', 'orange', 'banana', 'grape'];
+                array[0]; // 'apple'
+                array[2]; // 'banana'
+              </code>
+            </pre>
+            <div class="fragment">
+              <div>+ Произвольный доступ к элементам</div>
+              <div>- Фиксированный размер</div>
+            </div> 
+          </section>
+          <section>
+            <h5>Связные списки</h5>
+            <img src="./assets/linked-list-1.jpg" alt="linked-list" width="668px" height="450px">
+          </section>
+          <section>
+            <h5>Связные списки</h5>
+            <img src="./assets/linked-list-2.jpg" alt="linked-list" width="668px" height="450px">
+          </section>
+          <section>
+            <ul>
+              <li>Массивы - произвольный доступ к элементам</li>
+              <li>Связные списки - могут увеличиваться</li>
+            </ul> 
+          </section>
+        </section>
+
+        <section data-background-image="./assets/bg3.jpg">
+          <h5>Хеш-таблицы</h5>
+          <h5>используются, когда нужно быстро:</h5>
+          <ul>
+            <li>Добавлять</li>
+            <li>Искать</li>
+            <li>Удалять</li>
+          </ul>
+        </section>
+
+        <section data-background-image="./assets/bg3.jpg">
+          <section>
+            <h5>Где применяются хеш-таблицы?</h5>
+          </section>
+          <section data-background-image="./assets/contacts-bg.jpg"></section>
+          <section data-background-image="./assets/dns-bg.jpg"></section>
+          <section data-background-image="./assets/cach-bg.jpg"></section>
+          <section data-background-image="./assets/duble-bg.png"></section>
+        </section>
+
+        <section data-background-image="./assets/bg2.jpg">
+          <h5>Хеш-таблицы</h5>
+          <h5><span class="accent">не</span> используются, когда нужно:</h5>
+          <p>Сортировать данные</p>
+        </section>
+
+        <section id="fragments">
+          <h5>Хеш-функция</h5>
+          <p class="fragment">
+            Отображает строки на числа
+          </p>
+          <img class="fragment" src="./assets/hash-fn-1.jpg" alt="linked-list" width="668px" height="450px">
+        </section>
+
+        <section data-background-image="./assets/hash-fn-2.jpg"></section>
+        <section data-background-image="./assets/hash-fn-3.jpg"></section>
+        <section data-background-image="./assets/hash-fn-4.jpg"></section>
+        <section data-background-image="./assets/hash-fn-5.jpg"></section>
+
+        <section id="fragments" data-background-image="./assets/bg2.jpg">
+          <h5>Коллизия</h5>
+          <ul class="fragment">
+            Методы разрешения коллизии:
+            <li>Открытая адресация</li>
+            <li>Метод цепочек</li>
+          </ul>
+        </section>
+
+        <section data-background-image="./assets/bg2.jpg">
+          <section><h5>Метод открытой адресации</h5></section>
+          <section data-background-image="./assets/hash-col-1.jpg"></section>
+          <section data-background-image="./assets/hash-col-2.jpg"></section>
+        </section>
+
+        <section data-background-image="./assets/bg2.jpg">
+          <section><h5>Метод цепочек</h5></section>
+          <section data-background-image="./assets/hash-col-3.jpg"></section>
+        </section>
+
+        <section>
+          <h5>И в итоге какой метод лучше?</h5>
+          <p>На практике всё же второй метод предпочтительнее т.к. O(n/k) может иметь лучшую скорость выполнения</p>
+        </section>
+
+        <section data-background-image="./assets/bg1.jpg">
+          <section><h5>Ещё немного про быстродействие</h5></section>
+          <section data-background-image="./assets/fast.jpg"></section>
+          <section>
+            <h5>Для предотвращения коллизий необходимы:</h5>
+            <ul>
+              <li>Хорошая хеш-функция</li>
+              <li>Низкий коэффициент заполнения</li>
+            </ul>
+          </section>
+        </section>
+        
+        <section id="fragments" data-background-image="./assets/bg1.jpg">
+          <h5>Требования к хеш-функции:</h5>
+          <ul>
+            <li class="fragment">
+              Должна быть последовательна. При одинаквых входных параметрах, должны быть одинаковые возвращаемые значения
+            </li>
+            <li class="fragment">
+              Она должна использовать всю информацию о ключе, чтобы максимизировать количество возможных хеш-значений
+            </li>
+            <li class="fragment">
+              Хеш-значения должны быть равномерно распрделены в таблице, это уменьшит длинну связных списков при коллизии
+            </li>
+            <li class="fragment">
+              Хорошо будет если функция будет создавать различные хеш-значения для похожих ключей
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h5>Низкий коэффициент заполнения</h5>
+          <img src="./assets/fast-2.jpg">
+        </section>
+
+        <section id="fragments">
+          <h5>Давайте напишем хеш-таблицу на JavaScript!</h5>
+          <pre data-id="code-animation" class="fragment"><code class="hljs" data-trim data-line-numbers="|4,8-11|17|22-24"><script type="text/template">
+            function HashTable(size = 13) {
+                const _store = [];
+                const _size = size;
+                
+                function hash(string) {
+                    let index = 0;
+                    for(let i = 0; i < string.length; i++) {
+                        index += string.charCodeAt(i) * (i+1);
+                    }
+                    return index % _size;
+                }
+                
+                function findMatchingIndex(list, key) {
+                    for(let i = 0; i < list.length; i++) {
+                        if(list[i][0] === key) return i;
+                    }
+                }
+                
+                return {
+                    setElement(key, value) {
+                        const index = hash(key);
+                        
+                        if(!_store[index]) {
+                            _store[index] = [
+                                [key, value]
+                            ];
+                        }
+                        else {
+                            const list = _store[index];
+                            const matchingIndex = findMatchingIndex(list, key);
+                            
+                            if(matchingIndex) {
+                                list[matchingIndex] = [key, value];
+                                return;
+                            }
+                            
+                            list.push([key, value]);
+                        }
+                    },
+                    getElement(key) {
+                        const index = hash(key);
+                        
+                        if(_store[index]) {
+                            const list = _store[index];
+                            const matchingIndex = findMatchingIndex(list, key);
+                            if(matchingIndex) return list[matchingIndex][1];
+                        }
+                    },
+                    dump() {
+                        return _store;
+                    }
+                }
+            }
+
+            const ht = new HashTable();
+            ht.setElement("boroda", "Boroda");
+            ht.setElement("winderton", "winderton");
+            ht.setElement("soer", "soer");
+            console.log(ht.getElement("soer"));
+            ht.dump();
+					</script></code></pre>
+        </section>
+
+        <section  data-background-image="./assets/bg2.jpg">
+          <h5>Итоги</h5>
+        </section>
+
+        <section data-background-image="./assets/bg2.jpg">
+          <ul>
+            <li>
+              Хеш-таблицы обеспечивают быстрое выполнение поиска, вставки и удаления 
+            </li>
+            <li>
+              Хеш-таблица создаётся объединением хеш-функции с массивом. И взяла всё лучше у массива и связного списка
+            </li>
+            <li>
+              Коллизии не желательны. Хеш-функция должна и свести количество коллизий к минимуму
+            </li>
+            <li>
+              Как только коэффициент заполнения превышает 0.7, пора изменять размер таблицы
+            </li>
+            <li>
+              Хеш-таблицы хорошо подходят для обноружения дубликатов, используются для кэширования данных
+            </li>
+          </ul>
+        </section>
+
+        <section data-background-image="./assets/end.jpg"></section>
+
+        <section data-background-image="./assets/bg3-end.jpg">
+          <p><h5>Автор:</h5> Павел Гладкий 
+            <p>(SENLA | Software Engineering Laboratory)</p></p>
+          <p><h5>Инструменты разработки презентации:</h5>
+            <p>html, css, reveal.js, gulp</p></p>
+          <p><h5>Материалы:</h5>
+            <p>Грокаем алгоритмы (А.Бхаргава)</p>
+            <p>курс CS50</p>
+             <p><a href="https://www.youtube.com/watch?v=rVr1y32fDI0">https://www.youtube.com/watch?v=rVr1y32fDI0</a></p>
+            <p><a href="https://www.youtube.com/watch?v=9g3xte3Lf_M">https://www.youtube.com/watch?v=9g3xte3Lf_M</a></p>
+          </p>
+          <br/>
+          <br/>
+          <br/>
+          <p>31.01.2022</p>
+        </section>
+
 			</div>
 		</div>
 
@@ -31,7 +288,6 @@
 			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
-
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
 			});
